@@ -366,7 +366,7 @@
                         <i class="fa fa-angle-left pull-right"></i>
                     </a>
                     <ul class="treeview-menu">
-                        <li><a href="pages/charts/chartjs.html"><i class="fa fa-circle-o"></i>لیست دسته بندی ها </a></li>
+                        <li><a href="{{ route('categories.index') }}"><i class="fa fa-circle-o"></i>لیست دسته بندی ها </a></li>
                         <li><a href="pages/charts/morris.html"><i class="fa fa-circle-o"></i>دسته بندی جدید </a></li>
                     </ul>
                 </li>
@@ -470,21 +470,9 @@
 
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
-        <!-- Content Header (Page header) -->
-        <section class="content-header">
-            <h1>
-                Dashboard
-                <small>Control panel</small>
-            </h1>
-            <ol class="breadcrumb">
-                <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-                <li class="active">Dashboard</li>
-            </ol>
-        </section>
 
-        <!-- Main content -->
         @yield('main-content')
-        <!-- /.content -->
+
     </div>
     <!-- /.content-wrapper -->
     <footer class="main-footer">
