@@ -18,7 +18,7 @@
          folder instead of downloading all of them to reduce the load. -->
     <link rel="stylesheet" href="{{ asset( '/admin/dist/css/skins/_all-skins.min.css') }}">
     <!-- iCheck -->
-    <link rel="stylesheet" href="{{ asset( '/admin/plugins/iCheck/flat/blue.css') }}">
+    <link rel="stylesheet" href="{{ asset( '/admin/plugins/blue.css') }}">
     <!-- Morris chart -->
     <link rel="stylesheet" href="{{ asset( '/admin/plugins/morris/morris.css') }}">
     <!-- jvectormap -->
@@ -362,14 +362,12 @@
                 <li class="treeview">
                     <a href="#">
                         <i class="fa fa-pie-chart"></i>
-                        <span>نمودار ها</span>
+                        <span>دسته بندی ها</span>
                         <i class="fa fa-angle-left pull-right"></i>
                     </a>
                     <ul class="treeview-menu">
-                        <li><a href="pages/charts/chartjs.html"><i class="fa fa-circle-o"></i>نمودار ChartJS </a></li>
-                        <li><a href="pages/charts/morris.html"><i class="fa fa-circle-o"></i>نمودار Morris</a></li>
-                        <li><a href="pages/charts/flot.html"><i class="fa fa-circle-o"></i>نمودار Flot</a></li>
-                        <li><a href="pages/charts/inline.html"><i class="fa fa-circle-o"></i>نمودار Inline charts</a></li>
+                        <li><a href="pages/charts/chartjs.html"><i class="fa fa-circle-o"></i>لیست دسته بندی ها </a></li>
+                        <li><a href="pages/charts/morris.html"><i class="fa fa-circle-o"></i>دسته بندی جدید </a></li>
                     </ul>
                 </li>
                 <li class="treeview">
@@ -694,7 +692,7 @@
 <!-- ./wrapper -->
 
 <!-- jQuery 2.2.0 -->
-<script src="plugins/jQuery/jQuery-2.2.0.min.js"></script>
+<script src="{{ asset('admin/plugins/jQuery/jQuery-2.2.0.min.js') }}"></script>
 <!-- jQuery UI 1.11.4 -->
 <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
 <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
