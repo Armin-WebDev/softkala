@@ -7,6 +7,11 @@
                 <p>{{ session('add_category') }}</p>
             </div>
         @endif
+            @if(Session::has('update_category'))
+                <div class="alert alert-success">
+                    <p>{{ session('update_category') }}</p>
+                </div>
+            @endif
     </section>
 
     <section class="content">
@@ -29,8 +34,10 @@
                         <thead>
                         <tr>
 
-                            <th>شناسه</th>
-                            <th>عنوان</th>
+                            <th class="text-center">شناسه</th>
+                            <th class="text-center">عنوان</th>
+                            <th class="text-center">عملیات</th>
+
 
                         </tr>
                         </thead>
@@ -39,8 +46,15 @@
                         @foreach($categories as $category)
                         <tr>
 
-                                <td>{{ $category->id }}</td>
-                                <td>{{ $category->name }}</td>
+                                <td class="text-center"> {{ $category->id }}</td>
+                                <td class="text-center">{{ $category->name }}</td>
+                                <td class="text-center">
+                                    <a class="btn btn-warning" href="{{ route('categories.edit' , $category->id) }}">ویرایش</a>
+                                    <a class="btn btn-danger" href="{{ route('categories.destroy' , $category->id) }}">حذف</a>
+
+                                </td>
+
+
                         </tr>
                         @endforeach
                         </tbody>
@@ -49,10 +63,6 @@
 
             </div>
 
-            <div class="card-footer clearfix" style="display: block;">
-                <a href="javascript:void(0)" class="btn btn-sm btn-info float-left">Place New Order</a>
-                <a href="javascript:void(0)" class="btn btn-sm btn-secondary float-right">View All Orders</a>
-            </div>
 
         </div>
     </section>
