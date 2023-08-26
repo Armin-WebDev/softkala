@@ -2,14 +2,11 @@
 
 @section('main-content')
     <section class="content-header">
-        <h1>
-            Dashboard
-            <small>Control panel</small>
-        </h1>
-        <ol class="breadcrumb">
-            <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-            <li class="active">Dashboard</li>
-        </ol>
+        @if(Session::has('add_category'))
+            <div class="alert alert-success">
+                <p>{{ session('add_category') }}</p>
+            </div>
+        @endif
     </section>
 
     <section class="content">
@@ -20,8 +17,8 @@
             <div class="card-header border-transparent">
                 <h3 class="card-title">دسته بندی ها</h3>
                 <div class="card-tools text-left">
-                    <a class="btn btn-app">
-                        <i class="fas fa-save"></i> Save
+                    <a href="{{ route('categories.create') }}" class="btn btn-app">
+                        <i class="fa fa-plus"></i> جدید
                     </a>
                 </div>
             </div>
@@ -39,14 +36,13 @@
                         </thead>
                         <tbody>
 
+                        @foreach($categories as $category)
                         <tr>
-                            @foreach($categories as $category)
 
                                 <td>{{ $category->id }}</td>
                                 <td>{{ $category->name }}</td>
-                            @endforeach
-
                         </tr>
+                        @endforeach
                         </tbody>
                     </table>
                 </div>
