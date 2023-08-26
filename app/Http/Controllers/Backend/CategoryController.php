@@ -27,7 +27,8 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        return view('admin.categories.create');
+        $categories = Category::all();
+        return view('admin.categories.create' , compact(['categories']));
     }
 
     /**
@@ -70,7 +71,9 @@ class CategoryController extends Controller
      */
     public function edit($id)
     {
-        //
+        $category = Category::findOrFail($id);
+
+        return view('admin.categories.edit' , compact(['category']));
     }
 
     /**
@@ -82,7 +85,16 @@ class CategoryController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $category = Category::findOrFail($id);
+        $category->name = $request->input('name');
+        $category->meta_description = $request->input('meta_description');
+        $category->meta_keywords = $request->input('meta_keywords');
+        $category->save();
+
+        session()->flash('update_category' , 'دسته بندی با موفقیت ویرایش شد');
+
+        return redirect('administrator/categories/');
+
     }
 
     /**
