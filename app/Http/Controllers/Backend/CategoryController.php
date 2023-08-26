@@ -27,7 +27,7 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.categories.create');
     }
 
     /**
@@ -38,7 +38,17 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $category = new Category();
+        $category->name = $request->input('name');
+        $category->meta_description = $request->input('meta_description');
+        $category->meta_keywords = $request->input('meta_keywords');
+        $category->save();
+
+        session()->flash('add_category' , 'دسته بندی جدید با موفقیت ساخته شد');
+
+        return redirect('administrator/categories/');
+
+
     }
 
     /**
