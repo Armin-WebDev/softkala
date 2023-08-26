@@ -34,6 +34,15 @@
                                 <input type="text" id="name" name="name" class="form-control" placeholder="عنوان دسته بندی را وارد کنید..." required="">
                             </div>
                             <div class="form-group">
+                                <label for="name">دسته بندی والد</label>
+                                <select type="text" id="parent_id" name="parent_id" class="form-control">
+                                    <option value="">بدون والد</option>
+                                    @foreach($categories as $category)
+                                        <option value="{{ $category->id }}">{{ $category->name }}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                            <div class="form-group">
                                 <label for="name">متا توضیحات</label>
                                 <textarea type="text" id="meta_description" name="meta_description" class="form-control" rows="4" cols="50" placeholder="متا توضیحات دسته بندی را وارد کنید..." required="" style="resize: none"> </textarea>
                             </div>
