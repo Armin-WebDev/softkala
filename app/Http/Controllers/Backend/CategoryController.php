@@ -27,7 +27,10 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        $categories = Category::all();
+        $categories = Category::with('childrenRecursive')
+            ->where('parent_id',null)
+            ->get();
+
         return view('admin.categories.create' , compact(['categories']));
     }
 
@@ -43,6 +46,7 @@ class CategoryController extends Controller
         $category->name = $request->input('name');
         $category->meta_description = $request->input('meta_description');
         $category->meta_keywords = $request->input('meta_keywords');
+        $category->parent_id = $request->input('parent_id');
         $category->save();
 
         session()->flash('add_category' , 'دسته بندی جدید با موفقیت ساخته شد');
