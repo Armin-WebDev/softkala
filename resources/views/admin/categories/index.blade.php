@@ -44,18 +44,31 @@
                         <tbody>
 
                         @foreach($categories as $category)
+
                         <tr>
 
                                 <td class="text-center"> {{ $category->id }}</td>
-                                <td class="text-center">{{ $category->name }}</td>
+                                <td>{{ $category->name }}</td>
                                 <td class="text-center">
                                     <a class="btn btn-warning" href="{{ route('categories.edit' , $category->id) }}">ویرایش</a>
                                     <a class="btn btn-danger" href="{{ route('categories.destroy' , $category->id) }}">حذف</a>
 
                                 </td>
 
-
                         </tr>
+                            @if(count($category->childrenRecursive) > 0)
+                                @foreach($category->childrenRecursive as $sub_category)
+                                <tr>
+                                    <td class="text-center"> {{ $sub_category->id }}</td>
+                                    <td>--------------> {{ $sub_category->name }}</td>
+                                    <td class="text-center">
+                                        <a class="btn btn-warning" href="{{ route('categories.edit' , $category->id) }}">ویرایش</a>
+                                        <a class="btn btn-danger" href="{{ route('categories.destroy' , $category->id) }}">حذف</a>
+                                    </td>
+
+                                </tr>
+                                @endforeach
+                            @endif
                         @endforeach
                         </tbody>
                     </table>
