@@ -62,8 +62,8 @@
                                     <td class="text-center"> {{ $sub_category->id }}</td>
                                     <td>--------------> {{ $sub_category->name }}</td>
                                     <td class="text-center">
-                                        <a class="btn btn-warning" href="{{ route('categories.edit' , $category->id) }}">ویرایش</a>
-                                        <a class="btn btn-danger" href="{{ route('categories.destroy' , $category->id) }}">حذف</a>
+                                        <a class="btn btn-warning" href="{{ route('categories.edit' , $sub_category->id) }}">ویرایش</a>
+                                        <a class="btn btn-danger" href="{{ route('categories.destroy' , $sub_category->id) }}">حذف</a>
                                     </td>
 
                                 </tr>
