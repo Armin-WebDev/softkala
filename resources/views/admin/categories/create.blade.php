@@ -39,11 +39,7 @@
                                     <option value="">بدون والد</option>
                                     @foreach($categories as $category)
                                         <option value="{{ $category->id }}">{{ $category->name }}</option>
-                                        @if(count($category->childrenRecursive) > 0)
-                                            @foreach($category->childrenRecursive as $sub_category)
-                                                <option value="{{ $sub_category->id }}">-------> {{ $sub_category->name }}</option>
-                                            @endforeach
-                                        @endif
+
                                     @endforeach
                                 </select>
                             </div>
