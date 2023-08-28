@@ -77,9 +77,13 @@ class CategoryController extends Controller
      */
     public function edit($id)
     {
+        $categories = Category::with('childrenRecursive')
+            ->where('parent_id',null)
+            ->get();
+
         $category = Category::findOrFail($id);
 
-        return view('admin.categories.edit' , compact(['category']));
+        return view('admin.categories.edit' , compact(['category',['categories']]));
     }
 
     /**
