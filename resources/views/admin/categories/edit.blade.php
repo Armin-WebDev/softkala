@@ -27,8 +27,9 @@
             <div class="card-body p-0" style="display: block;">
                 <div class="row">
                     <div class="col-md-6 col-md-offset-3">
-                        <form name="add-blog-post-form" id="add-blog-post-form" method="post" action="{{ url('/administrator/categories/{category}/edit', $category->id) }}">
+                        <form name="add-blog-post-form" id="add-blog-post-form" method="post" action="/administrator/categories/{{$category->id}}">
                             @csrf
+                            <input type="hidden" name="_method" value="PATCH">
                             <div class="form-group">
                                 <label for="name">نام دسته بندی</label>
                                 <input type="text" id="name" name="name" class="form-control" value="{{ $category->name }}" required="">
