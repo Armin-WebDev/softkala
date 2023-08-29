@@ -116,7 +116,14 @@ class CategoryController extends Controller
     public function destroy($id)
     {
 
-        $category = Category::findOrFail($id);
+        $category = Category::with('childrenRecursive')
+            ->where('id' , $id)
+            ->first();
+
+        if (count($category->childrenRecursive) > 0){
+            session()->flash('error_category',"دسته بندی $category->name دارای زیر مجموعه میباشد و حذف آن امکان پذیر نیست");
+            return redirect('administrator/categories/');
+        }
         $category->delete();
 
         session()->flash('delete_category' , 'دسته بندی حذف شد');

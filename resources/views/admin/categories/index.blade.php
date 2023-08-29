@@ -12,6 +12,11 @@
                     <p>{{ session('update_category') }}</p>
                 </div>
         @endif
+            @if(Session::has('error_category'))
+                <div class="alert alert-error">
+                    <p>{{ session('error_category') }}</p>
+                </div>
+            @endif
             @if(Session::has('delete_category'))
                 <div class="alert alert-danger">
                     <p>{{ session('delete_category') }}</p>
