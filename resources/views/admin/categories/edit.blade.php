@@ -18,7 +18,7 @@
         </section>
         <div class="card dark-mode">
             <div class="card-header border-transparent">
-                <h3 class="card-title">ایجاد دسته بندی جدید</h3>
+                <h3 class="card-title">ویرایش دسته بندی {{ $category->name }}</h3>
                 <div class="card-tools text-left">
 
                 </div>
@@ -36,8 +36,13 @@
                             <div class="form-group">
                                 <label for="name">دسته بندی والد</label>
                                 <select type="text" id="parent_id" name="parent_id" class="form-control">
-                                    <option value="">بدون والد</option>
+                                    @if($category->parent_id == null)
+                                        <option value="">بدون والد</option>
+                                    @endif
+                                        @foreach($categories as $category_data)
+                                            <option value="{{ $category_data->id }}" @if($category->parent_id == $category_data->id) selected @endif>{{ $category_data->name }}</option>
 
+                                        @endforeach
                                 </select>
                             </div>
                             <div class="form-group">
