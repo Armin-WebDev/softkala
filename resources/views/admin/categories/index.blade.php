@@ -7,9 +7,14 @@
                 <p>{{ session('add_category') }}</p>
             </div>
         @endif
-            @if(Session::has('update_category'))
+        @if(Session::has('update_category'))
                 <div class="alert alert-success">
                     <p>{{ session('update_category') }}</p>
+                </div>
+        @endif
+            @if(Session::has('delete_category'))
+                <div class="alert alert-danger">
+                    <p>{{ session('delete_category') }}</p>
                 </div>
             @endif
     </section>
@@ -51,7 +56,13 @@
                                 <td>{{ $category->name }}</td>
                                 <td class="text-center">
                                     <a class="btn btn-warning" href="{{ route('categories.edit' , $category->id) }}">ویرایش</a>
-                                    <a class="btn btn-danger" href="{{ route('categories.destroy' , $category->id) }}">حذف</a>
+                                    <div style="display: inline-block">
+                                        <form method="post" action="/administrator/categories/{{$category->id}}">
+                                            @csrf
+                                            <input type="hidden" name="_method" value="DELETE">
+                                            <button type="submit" class="btn btn-danger">حذف</button>
+                                        </form>
+                                    </div>
 
                                 </td>
 
@@ -63,7 +74,13 @@
                                     <td>--------------> {{ $sub_category->name }}</td>
                                     <td class="text-center">
                                         <a class="btn btn-warning" href="{{ route('categories.edit' , $sub_category->id) }}">ویرایش</a>
-                                        <a class="btn btn-danger" href="{{ route('categories.destroy' , $sub_category->id) }}">حذف</a>
+                                        <div style="display: inline-block">
+                                            <form method="post" action="/administrator/categories/{{$sub_category->id}}">
+                                                @csrf
+                                                <input type="hidden" name="_method" value="DELETE">
+                                                <button type="submit" class="btn btn-danger">حذف</button>
+                                            </form>
+                                        </div>
                                     </td>
 
                                 </tr>
