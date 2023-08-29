@@ -103,7 +103,7 @@ class CategoryController extends Controller
 
         session()->flash('update_category' , 'دسته بندی با موفقیت ویرایش شد');
 
-        return redirect('administrator/categories/');
+        return redirect('/administrator/categories/');
 
     }
 
@@ -115,6 +115,11 @@ class CategoryController extends Controller
      */
     public function destroy($id)
     {
-        //
+
+        $category = Category::findOrFail($id);
+        $category->delete();
+
+        session()->flash('delete_category' , 'دسته بندی حذف شد');
+        return redirect('administrator/categories/');
     }
 }
