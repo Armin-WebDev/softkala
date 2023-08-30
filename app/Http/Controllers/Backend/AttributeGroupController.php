@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Backend;
 use App\Http\Controllers\Controller;
 use App\Models\AttributeGroup;
 use Illuminate\Http\Request;
+use function PHPUnit\Framework\at;
 
 class AttributeGroupController extends Controller
 {
@@ -27,7 +28,7 @@ class AttributeGroupController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.attributes.create');
     }
 
     /**
@@ -38,7 +39,13 @@ class AttributeGroupController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $attributesGroup = new AttributeGroup();
+        $attributesGroup->title = $request->input('title');
+        $attributesGroup->type = $request->input('type');
+        $attributesGroup->save();
+
+        session()->flash('add_attribute' , 'ویژگی جدید اضافه شد');
+        return redirect('/administrator/attributes-group/');
     }
 
     /**
