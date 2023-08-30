@@ -2,24 +2,9 @@
 
 @section('main-content')
     <section class="content-header">
-        @if(Session::has('add_category'))
+        @if(Session::has('add_attribute'))
             <div class="alert alert-success">
-                <p>{{ session('add_category') }}</p>
-            </div>
-        @endif
-        @if(Session::has('update_category'))
-            <div class="alert alert-success">
-                <p>{{ session('update_category') }}</p>
-            </div>
-        @endif
-        @if(Session::has('error_category'))
-            <div class="alert alert-error">
-                <p>{{ session('error_category') }}</p>
-            </div>
-        @endif
-        @if(Session::has('delete_category'))
-            <div class="alert alert-danger">
-                <p>{{ session('delete_category') }}</p>
+                <p>{{ session('add_attribute') }}</p>
             </div>
         @endif
     </section>
@@ -59,8 +44,8 @@
                             <tr>
 
                                 <td class="text-center"> {{ $attribute->id }}</td>
-                                <td>{{ $attribute->name }}</td>
-                                <td>{{ $attribute->type }}</td>
+                                <td class="text-center">{{ $attribute->title }}</td>
+                                <td class="text-center">{{ $attribute->type }}</td>
                                 <td class="text-center">
                                     <a class="btn btn-warning" href="{{ route('categories.edit' , $attribute->id) }}">ویرایش</a>
                                     <div style="display: inline-block">
@@ -74,25 +59,6 @@
                                 </td>
 
                             </tr>
-                            @if(count($category->childrenRecursive) > 0)
-                                @foreach($category->childrenRecursive as $sub_category)
-                                    <tr>
-                                        <td class="text-center"> {{ $sub_category->id }}</td>
-                                        <td>--------------> {{ $sub_category->name }}</td>
-                                        <td class="text-center">
-                                            <a class="btn btn-warning" href="{{ route('categories.edit' , $sub_category->id) }}">ویرایش</a>
-                                            <div style="display: inline-block">
-                                                <form method="post" action="/administrator/categories/{{$sub_category->id}}">
-                                                    @csrf
-                                                    <input type="hidden" name="_method" value="DELETE">
-                                                    <button type="submit" class="btn btn-danger">حذف</button>
-                                                </form>
-                                            </div>
-                                        </td>
-
-                                    </tr>
-                                @endforeach
-                            @endif
                         @endforeach
                         </tbody>
                     </table>
