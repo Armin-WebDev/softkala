@@ -13,7 +13,7 @@
                 </div>
             @endif
             @if(Session::has('delete_attribute'))
-                <div class="alert alert-success">
+                <div class="alert alert-danger">
                     <p>{{ session('delete_attribute') }}</p>
                 </div>
             @endif

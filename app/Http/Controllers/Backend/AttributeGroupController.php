@@ -103,7 +103,7 @@ class AttributeGroupController extends Controller
         $attributeGroup = AttributeGroup::findOrFail($id);
         $attributeGroup->delete();
 
-        session()->flash('delete_attribute' , "ویژگی$attributeGroup->title حذف شد ");
+        session()->flash('delete_attribute' , " ویژگی$attributeGroup->title حذف شد ");
         return redirect('/administrator/attributes-group/');
     }
 }

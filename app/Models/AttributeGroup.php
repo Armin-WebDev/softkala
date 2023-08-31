@@ -9,4 +9,9 @@ class AttributeGroup extends Model
 {
     protected $table = 'attributesgroup';
     use HasFactory;
+
+    public function attributesValue()
+    {
+        return $this->hasMany(AttributeValue::class);
+    }
 }
