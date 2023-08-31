@@ -12,6 +12,11 @@
                     <p>{{ session('update_attribute') }}</p>
                 </div>
             @endif
+            @if(Session::has('delete_attribute'))
+                <div class="alert alert-success">
+                    <p>{{ session('delete_attribute') }}</p>
+                </div>
+            @endif
     </section>
 
     <section class="content">
