@@ -67,7 +67,9 @@ class AttributeGroupController extends Controller
      */
     public function edit($id)
     {
-        //
+        $attributeGroup = AttributeGroup::findOrFail($id);
+
+        return view('admin.attributes.edit' , compact(['attributeGroup']));
     }
 
     /**
@@ -79,7 +81,15 @@ class AttributeGroupController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+
+
+        $attributeGroup = AttributeGroup::findOrFail($id);
+        $attributeGroup->title = $request->input('title');
+        $attributeGroup->type = $request->input('type');
+        $attributeGroup->save();
+
+        session()->flash('update_attribute' , "ویژگی $attributeGroup->title با موفقیت ویرایش شد ");
+        return redirect('/administrator/attributes-group/');
     }
 
     /**
