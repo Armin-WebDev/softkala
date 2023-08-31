@@ -7,6 +7,11 @@
                 <p>{{ session('add_attribute') }}</p>
             </div>
         @endif
+            @if(Session::has('update_attribute'))
+                <div class="alert alert-success">
+                    <p>{{ session('update_attribute') }}</p>
+                </div>
+            @endif
     </section>
 
     <section class="content">
@@ -47,9 +52,9 @@
                                 <td class="text-center">{{ $attribute->title }}</td>
                                 <td class="text-center">{{ $attribute->type }}</td>
                                 <td class="text-center">
-                                    <a class="btn btn-warning" href="{{ route('categories.edit' , $attribute->id) }}">ویرایش</a>
+                                    <a class="btn btn-warning" href="{{ route('attributes-group.edit' , $attribute->id) }}">ویرایش</a>
                                     <div style="display: inline-block">
-                                        <form method="post" action="/administrator/categories/{{$attribute->id}}">
+                                        <form method="post" action="/administrator/attributes-group/{{$attribute->id}}">
                                             @csrf
                                             <input type="hidden" name="_method" value="DELETE">
                                             <button type="submit" class="btn btn-danger">حذف</button>
