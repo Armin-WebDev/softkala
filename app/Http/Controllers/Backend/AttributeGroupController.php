@@ -100,6 +100,10 @@ class AttributeGroupController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $attributeGroup = AttributeGroup::findOrFail($id);
+        $attributeGroup->delete();
+
+        session()->flash('delete_attribute' , "ویژگی$attributeGroup->title حذف شد ");
+        return redirect('/administrator/attributes-group/');
     }
 }
