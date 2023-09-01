@@ -70,7 +70,9 @@ class AttributeValueController extends Controller
      */
     public function edit($id)
     {
-        //
+        $attributeValue = AttributeValue::findOrFail($id);
+        $attributesGroup = AttributeGroup::all();
+        return view('admin.attributes-value.edit' , compact(['attributeValue','attributesGroup']));
     }
 
     /**
