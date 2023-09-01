@@ -12,9 +12,9 @@
                     <p>{{ session('update_value') }}</p>
                 </div>
             @endif
-            @if(Session::has('delete_attribute'))
+            @if(Session::has('delete_value'))
                 <div class="alert alert-danger">
-                    <p>{{ session('delete_attribute') }}</p>
+                    <p>{{ session('delete_value') }}</p>
                 </div>
             @endif
     </section>
