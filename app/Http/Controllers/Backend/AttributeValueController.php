@@ -84,7 +84,15 @@ class AttributeValueController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+
+        $attributeValue = AttributeValue::findOrFail($id);
+        $attributeValue->name = $request->input('title');
+        $attributeValue->attributeGroup_id = $request->input('attribute_group');
+
+        $attributeValue->save();
+
+        session()->flash('update_value' , "مقدار $attributeValue->name با موفقیت ویرایش شد");
+        return redirect('/administrator/attributes-value');
     }
 
     /**
