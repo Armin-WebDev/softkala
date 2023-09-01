@@ -103,6 +103,11 @@ class AttributeValueController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $attributeValue = AttributeValue::findOrFail($id);
+        $attributeValue->delete();
+
+        session()->flash('delete_attribute' , " مقدار$attributeValue->title حذف شد ");
+        return redirect('/administrator/attributes-value/');
+
     }
 }
