@@ -28,7 +28,8 @@ class AttributeValueController extends Controller
      */
     public function create()
     {
-        //
+        $attributesGroup = AttributeGroup::all();
+        return view('admin.attributes-value.create',compact(['attributesGroup']));
     }
 
     /**
@@ -39,7 +40,15 @@ class AttributeValueController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $attributeValue = new AttributeValue();
+        $attributeValue->name = $request->input('title');
+        $attributeValue->attributeGroup_id = $request->input('attribute_group');
+
+        $attributeValue->save();
+
+        session()->flash('add_value' , "مقدار $attributeValue->name با موفقیت اضافه شد");
+        return redirect('/administrator/attributes-value');
+
     }
 
     /**
