@@ -7,9 +7,9 @@
                 <p>{{ session('add_value') }}</p>
             </div>
         @endif
-            @if(Session::has('update_attribute'))
+            @if(Session::has('update_value'))
                 <div class="alert alert-success">
-                    <p>{{ session('update_attribute') }}</p>
+                    <p>{{ session('update_value') }}</p>
                 </div>
             @endif
             @if(Session::has('delete_attribute'))

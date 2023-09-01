@@ -27,7 +27,7 @@
             <div class="card-body p-0" style="display: block;">
                 <div class="row">
                     <div class="col-md-6 col-md-offset-3">
-                        <form name="add-blog-post-form" id="add-blog-post-form" method="post" action="/administrator/attributes-group/{{$attributeValue->id}}">
+                        <form name="add-blog-post-form" id="add-blog-post-form" method="post" action="/administrator/attributes-value/{{$attributeValue->id}}">
                             @csrf
                             <input type="hidden" name="_method" value="PATCH">
                             <div class="form-group">
@@ -36,7 +36,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="name">نوع ویژگی</label>
-                                <select type="text" id="type" name="type" class="form-control">
+                                <select type="text" id="attribute_group" name="attribute_group" class="form-control">
                                     <option value="">انتخاب کنید</option>
                                     @foreach($attributesGroup as $attribute )
                                         <option value="{{$attribute->id}}" @if($attribute->id == $attributeValue->attributeGroup_id) selected @endif>{{$attribute->title}}</option>
