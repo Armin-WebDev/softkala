@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
+use App\Models\AttributeGroup;
+use App\Models\AttributeValue;
 use Illuminate\Http\Request;
 
 class AttributeValueController extends Controller
@@ -14,7 +16,9 @@ class AttributeValueController extends Controller
      */
     public function index()
     {
-        //
+        $attributesValue = AttributeValue::with('attributeGroup')->paginate(10);
+
+        return view('admin.attributes-value.index' , compact(['attributesValue']));
     }
 
     /**
