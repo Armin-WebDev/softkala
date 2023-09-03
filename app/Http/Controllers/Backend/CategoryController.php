@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
+use App\Models\AttributeGroup;
 use App\Models\Category;
 use Illuminate\Http\Request;
 
@@ -128,5 +129,13 @@ class CategoryController extends Controller
 
         session()->flash('delete_category' , 'دسته بندی حذف شد');
         return redirect('administrator/categories/');
+    }
+
+    public function indexSetting($id)
+    {
+        $category = Category::findOrFail($id);
+        $attributeGroup = AttributeGroup::all();
+
+        return view('admin.categories.index-setting' , compact(['category' , 'attributeGroup']));
     }
 }
