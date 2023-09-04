@@ -27,13 +27,13 @@
             <div class="card-body p-0" style="display: block;">
                 <div class="row">
                     <div class="col-md-6 col-md-offset-3">
-                        <form name="add-blog-post-form" id="add-blog-post-form" method="post" action="/administrator/categories">
+                        <form name="add-blog-post-form" id="add-blog-post-form" method="post" action="/administrator/categories/{{$category->id}}/settings">
                             @csrf
                             <div class="form-group">
-                                <label for="name">ویژگی ها</label>
-                                <select type="text" id="parent_id" name="parent_id" class="form-control">
+                                <label for="attributesGroup">ویژگی ها</label>
+                                <select type="text" id="" name="attributesGroup[]" class="form-control" multiple>
                                     @foreach($attributesGroup as $attribute)
-                                        <option value="{{ $attribute->id }}">{{ $attribute->title }}</option>
+                                        <option value="{{ $attribute->id }}" @if(in_array($attribute->id,$category->attributesGroup->pluck('id')->toArray())) selected @endif>{{ $attribute->title }}</option>
 
                                     @endforeach
                                 </select>
