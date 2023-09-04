@@ -131,11 +131,20 @@ class CategoryController extends Controller
         return redirect('administrator/categories/');
     }
 
-    public function indexSetting($id)
+    public function indexSettings($id)
     {
         $category = Category::findOrFail($id);
-        $attributeGroup = AttributeGroup::all();
+        $attributesGroup = AttributeGroup::all();
 
-        return view('admin.categories.index-setting' , compact(['category' , 'attributeGroup']));
+        return view('admin.categories.index-setting' , compact(['category' , 'attributesGroup']));
+    }
+
+    public function saveSettings(Request $request,$id)
+    {
+        $category = Category::findOrFail($id);
+        $category->attributesGroup()->sync($request->attributesGroup);
+        $category->save();
+
+        return redirect('administrator/categories/');
     }
 }
