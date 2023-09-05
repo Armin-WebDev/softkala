@@ -68,7 +68,7 @@
                                             <button type="submit" class="btn btn-danger">حذف</button>
                                         </form>
                                     </div>
-                                    <a class="btn btn-primary" href="{{ route('categories.indexSetting' , $category->id) }}">ویرایش</a>
+                                    <a class="btn btn-primary" href="{{ route('categories.indexSetting' , $category->id) }}">تنظیمات</a>
 
 
                                 </td>
@@ -88,7 +88,7 @@
                                                 <button type="submit" class="btn btn-danger">حذف</button>
                                             </form>
                                         </div>
-                                        <a class="btn btn-primary" href="{{ route('categories.indexSetting' , $sub_category->id) }}">ویرایش</a>
+                                        <a class="btn btn-primary" href="{{ route('categories.indexSetting' , $sub_category->id) }}">تنظیمات</a>
 
                                     </td>
 

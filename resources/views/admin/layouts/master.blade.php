@@ -29,6 +29,9 @@
     <link rel="stylesheet" href="{{ asset( '/admin/plugins/daterangepicker/daterangepicker-bs3.css') }}">
     <!-- bootstrap wysihtml5 - text editor -->
     <link rel="stylesheet" href="{{ asset( '/admin/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css') }}">
+    <link rel="stylesheet" href="{{ asset( '/admin/dist/css/dropzone.css') }}">
+
+
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -368,7 +371,7 @@
                         <i class="fa fa-angle-left pull-right"></i>
                     </a>
                     <ul class="treeview-menu">
-                        <li><a href="pages/forms/general.html"><i class="fa fa-circle-o"></i>لیست محصولات</a></li>
+                        <li><a href="{{ route('products.index') }}"><i class="fa fa-circle-o"></i>لیست محصولات</a></li>
 
                     </ul>
                 </li>
@@ -581,9 +584,13 @@
          immediately after the control sidebar -->
     <div class="control-sidebar-bg"></div>
 </div>
+
 <!-- ./wrapper -->
 
 <!-- jQuery 2.2.0 -->
+
+<script src="{{ asset('admin/dist/js/dropzone.js') }}"></script>
+
 <script src="{{ asset('admin/plugins/jQuery/jQuery-2.2.0.min.js') }}"></script>
 <!-- jQuery UI 1.11.4 -->
 <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
