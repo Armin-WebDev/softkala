@@ -49,6 +49,12 @@
                                 <label for="discount_price">قیمت تخفیف خورده محصول</label>
                                 <input type="number" id="discount_price" name="discount_price" class="form-control" placeholder="نام مستعار محصول را وارد کنید..." required="">
                             </div>
+                            <div class="form-group">
+                                <label for="photo">تصویر</label>
+                                <input type="hidden" name="photo_id" id="brand-photo">
+                                <div class="dropzone" id="dropzone"></div>
+                            </div>
+
 
                             <div class="form-group">
                                 <label for="name">دسته بندی والد</label>
@@ -85,5 +91,6 @@
 
         </div>
     </section>
+
 
 @endsection
