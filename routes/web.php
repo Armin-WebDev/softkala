@@ -24,6 +24,8 @@ Route::prefix('administrator')->group(function () {
     Route::post('categories/{id}/settings' , [\App\Http\Controllers\Backend\CategoryController::class , 'saveSettings']);
     Route::resource('attributes-group' , \App\Http\Controllers\Backend\AttributeGroupController::class);
     Route::resource('attributes-value' , \App\Http\Controllers\Backend\AttributeValueController::class);
+    Route::resource('photos' , [\App\Http\Controllers\Backend\PhotoController::class , 'upload'])->name('photos.upload');
+    Route::post('photos/upload' , \App\Http\Controllers\Backend\PhotoController::class);
     Route::resource('products' , \App\Http\Controllers\Backend\ProductController::class);
 
 });
