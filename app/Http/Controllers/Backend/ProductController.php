@@ -39,6 +39,19 @@ class ProductController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
+
+    public function generateSKU()
+    {
+        $number = mt_rand(1000,99999);
+        if ($this->checkSKU($number)) {
+            return $this->generateSKU();
+        }
+        return string($number);
+    }
+    public function checkSKU($number)
+    {
+        return Product::where('sku' , $number)->exist();
+    }
     public function store(Request $request)
     {
         //
