@@ -35,7 +35,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="name">توضیحات محصول</label>
-                                <textarea type="text" id="description" name="description" class="form-control" rows="4" cols="50" placeholder="متا توضیحات دسته بندی را وارد کنید..." required="" style="resize: none"> </textarea>
+                                <textarea type="text" id="textareaDescription" name="description" class="ckeditor form-control" rows="4" cols="50" placeholder="متا توضیحات دسته بندی را وارد کنید..." required="" style="resize: none"> </textarea>
                             </div>
                             <div class="form-group">
                                 <label for="slug">نام مستعار محصول</label>
@@ -51,7 +51,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="photo">تصویر</label>
-                                <input type="hidden" name="photo_id" id="brand-photo">
+                                <input type="hidden" name="photo_id[]" id="brand-photo">
                                 <div class="dropzone" id="dropzone"></div>
                             </div>
 
@@ -91,6 +91,13 @@
 
         </div>
     </section>
+    <script type="text/javascript" src="{{asset('/admin/dist/js/dropzone.js')}}"></script>
+    <script src="//cdn.ckeditor.com/4.14.1/standard/ckeditor.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('.ckeditor').ckeditor();
+    });
+</script>
 
 
 @endsection

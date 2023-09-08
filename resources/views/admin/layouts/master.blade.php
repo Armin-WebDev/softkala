@@ -29,7 +29,7 @@
     <link rel="stylesheet" href="{{ asset( '/admin/plugins/daterangepicker/daterangepicker-bs3.css') }}">
     <!-- bootstrap wysihtml5 - text editor -->
     <link rel="stylesheet" href="{{ asset( '/admin/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css') }}">
-    <link rel="stylesheet" href="{{ asset( '/admin/dist/css/dropzone.css') }}">
+    <link rel="stylesheet" href="{{ asset( '/admin/dist/css/dropzone.min.css') }}">
 
 
 
@@ -589,7 +589,7 @@
 
 <!-- jQuery 2.2.0 -->
 
-<script src="{{ asset('admin/dist/js/dropzone.js') }}"></script>
+<!-- <script src="{{ asset('admin/dist/js/dropezone.min.js') }}"></script> -->
 
 <script src="{{ asset('admin/plugins/jQuery/jQuery-2.2.0.min.js') }}"></script>
 <!-- jQuery UI 1.11.4 -->
@@ -618,7 +618,6 @@
 <!-- Bootstrap WYSIHTML5 -->
 <script src="{{ asset('admin/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js') }} "></script>
 <!-- Slimscroll -->
-<script src="{{ asset(' admin/plugins/slimScroll/jquery.slimscroll.min.js') }}"></script>
 <!-- FastClick -->
 <script src="{{ asset('admin/plugins/fastclick/fastclick.js') }} "></script>
 <!-- AdminLTE App -->
