@@ -31,11 +31,11 @@
                             @csrf
                             <div class="form-group">
                                 <label for="name">عنوان محصول</label>
-                                <input type="text" id="name" name="name" class="form-control" placeholder="عنوان محصول را وارد کنید..." required="">
+                                <input type="text" id="title" name="title" class="form-control" placeholder="عنوان محصول را وارد کنید..." required="">
                             </div>
                             <div class="form-group">
                                 <label for="name">توضیحات محصول</label>
-                                <textarea type="text" id="textareaDescription" name="description" class="ckeditor form-control" rows="4" cols="50" placeholder="متا توضیحات دسته بندی را وارد کنید..." required="" style="resize: none"> </textarea>
+                                <textarea type="text" id="description" name="description" class="ckeditor form-control" rows="4" cols="50" placeholder="متا توضیحات دسته بندی را وارد کنید..." required="" style="resize: none"> </textarea>
                             </div>
                             <div class="form-group">
                                 <label for="slug">نام مستعار محصول</label>
@@ -57,8 +57,8 @@
 
 
                             <div class="form-group">
-                                <label for="name">دسته بندی والد</label>
-                                <select type="text" id="parent_id" name="parent_id" class="form-control">
+                                <label for="name">دسته بندی </label>
+                                <select type="text" id="categories" name="categories[]" class="form-control" multiple>
                                     @foreach($categories as $category)
                                         <option value="{{ $category->id }}">{{ $category->name }}</option>
                                         @if(count($category->childrenRecursive) > 0)
