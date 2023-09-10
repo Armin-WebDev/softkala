@@ -46,15 +46,38 @@ class ProductController extends Controller
         if ($this->checkSKU($number)) {
             return $this->generateSKU();
         }
-        return string($number);
+        return (string)$number;
     }
     public function checkSKU($number)
     {
-        return Product::where('sku' , $number)->exist();
+        return Product::where('sku' , $number)->exists();
+    }
+
+    public function makeSlug($string)
+    {
+        $string = strtolower($string);
+        $string = str_replace(['?' , '؟'] , '' , $string);
+        return preg_replace('/\s+/u', '-' , trim($string));
     }
     public function store(Request $request)
     {
-        //
+        $newProduct = new Product();
+        $newProduct->title = $request->title;
+        $newProduct->sku = $this->generateSKU();
+        $newProduct->slug = $this->makeSlug($request->slug);
+        $newProduct->status = $request->status;
+        $newProduct->price = $request->price;
+        $newProduct->discount_price = $request->discount_price;
+        $newProduct->description = $request->description;
+        $newProduct->user_id = 2;
+
+        $newProduct->save();
+        $newProduct->photos()->sync('photos');
+        $newProduct->categories()->sync($request->categories);
+
+        session()->flash('add_product' , 'محصول جدید با موفقیت ایجاد شد.');
+        return redirect('/administrator/products/');
+
     }
 
     /**
