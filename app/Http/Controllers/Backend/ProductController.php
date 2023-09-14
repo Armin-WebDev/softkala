@@ -111,7 +111,11 @@ class ProductController extends Controller
      */
     public function edit($id)
     {
-        //
+        $categories = Category::with('childrenRecursive')->where('parent_id',null)->get();
+
+        $product = Product::findOrFail($id);
+
+        return view('admin.products.edit', compact(['product' , 'categories']));
     }
 
     /**
