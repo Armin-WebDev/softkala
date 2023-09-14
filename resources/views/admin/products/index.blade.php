@@ -62,7 +62,7 @@
                                 <td class="text-center"> {{ $product->sku }}</td>
                                 <td class="text-center">{{ $product->title }}</td>
                                 <td class="text-center">
-                                    <a class="btn btn-warning" href="{{ route('categories.edit' , $product->id) }}">ویرایش</a>
+                                    <a class="btn btn-warning" href="{{ route('products.edit' , $product->id) }}">ویرایش</a>
                                     <div style="display: inline-block">
                                         <form method="post" action="/administrator/categories/{{$product->id}}">
                                             @csrf
