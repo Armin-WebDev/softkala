@@ -2,9 +2,9 @@
 
 @section('main-content')
     <section class="content-header">
-        @if(Session::has('add_category'))
+        @if(Session::has('add_product'))
             <div class="alert alert-success">
-                <p>{{ session('add_category') }}</p>
+                <p>{{ session('add_product') }}</p>
             </div>
         @endif
         @if(Session::has('update_category'))
@@ -60,7 +60,7 @@
 
                                 <td class="text-center"> {{ $product->id }}</td>
                                 <td class="text-center"> {{ $product->sku }}</td>
-                                <td class="text-center">>{{ $product->title }}</td>
+                                <td class="text-center">{{ $product->title }}</td>
                                 <td class="text-center">
                                     <a class="btn btn-warning" href="{{ route('categories.edit' , $product->id) }}">ویرایش</a>
                                     <div style="display: inline-block">
