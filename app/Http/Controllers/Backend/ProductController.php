@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
 use App\Models\Category;
+use App\Models\Photo;
 use App\Models\Product;
 use Illuminate\Http\Request;
 
@@ -55,16 +56,24 @@ class ProductController extends Controller
 
     public function makeSlug($string)
     {
-        $string = strtolower($string);
-        $string = str_replace(['?' , '؟'] , '' , $string);
         return preg_replace('/\s+/u', '-' , trim($string));
     }
     public function store(Request $request)
     {
+
+        $file = $request->file('photo_id');
+        $photo = new Photo();
+        $name = time() . $file->getClientOriginalName();
+        $photo->path = $name;
+        $photo->original_name = $file->getClientOriginalName();
+        $photo->user_id = 2;
+        $photo->save();
+
+
         $newProduct = new Product();
         $newProduct->title = $request->title;
         $newProduct->sku = $this->generateSKU();
-        $newProduct->slug = $this->makeSlug($request->slug);
+        $newProduct->slug = $this->makeSlug($request->input('slug'));
         $newProduct->status = $request->status;
         $newProduct->price = $request->price;
         $newProduct->discount_price = $request->discount_price;
@@ -72,8 +81,11 @@ class ProductController extends Controller
         $newProduct->user_id = 2;
 
         $newProduct->save();
-        $newProduct->photos()->sync('photos');
         $newProduct->categories()->sync($request->categories);
+
+
+//        $photos = explode(',' , $request->input('photo_id')[0]);
+        $newProduct->photos()->sync($photo);
 
         session()->flash('add_product' , 'محصول جدید با موفقیت ایجاد شد.');
         return redirect('/administrator/products/');
