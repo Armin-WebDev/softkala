@@ -29,7 +29,7 @@
     <link rel="stylesheet" href="{{ asset( '/admin/plugins/daterangepicker/daterangepicker-bs3.css') }}">
     <!-- bootstrap wysihtml5 - text editor -->
     <link rel="stylesheet" href="{{ asset( '/admin/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css') }}">
-    <link rel="stylesheet" href="{{ asset( '/admin/dist/css/dropzone.min.css') }}">
+    <link rel="stylesheet" href="{{ asset( '/admin/dist/css/dropzone.css') }}">
 
 
 
@@ -589,8 +589,9 @@
 
 <!-- jQuery 2.2.0 -->
 
-<!-- <script src="{{ asset('admin/dist/js/dropezone.min.js') }}"></script> -->
 
+
+</script>
 <script src="{{ asset('admin/plugins/jQuery/jQuery-2.2.0.min.js') }}"></script>
 <!-- jQuery UI 1.11.4 -->
 <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
@@ -608,7 +609,24 @@
 <!-- jvectormap -->
 <script src="{{ asset('admin/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js') }} "></script>
 <script src="{{ asset('admin/plugins/jvectormap/jquery-jvectormap-world-mill-en.js') }} "></script>
+<script src="{{ asset('admin/dist/js/dropzone.js') }}"></script>
 <!-- jQuery Knob Chart -->
+    <script src="{{ asset('admin/dist/js/dropzone.js') }}"></script>
+<script type="text/javascript">
+
+    Dropzone.autoDiscover = false;
+
+    $(document).ready(function () {
+        $("#id_dropzone").dropzone({
+            maxFiles: 2000,
+            url: "/ajax_file_upload_handler/",
+            success: function (file, response) {
+                console.log(response);
+            }
+        });
+    })
+
+</script>
 <script src="{{ asset('admin/plugins/knob/jquery.knob.js') }} "></script>
 <!-- daterangepicker -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.2/moment.min.js"></script>

@@ -27,7 +27,7 @@
             <div class="card-body p-0" style="display: block;">
                 <div class="row">
                     <div class="col-md-6 col-md-offset-3">
-                        <form name="add-blog-post-form" id="add-blog-post-form" method="post" action="/administrator/products">
+                        <form name="add-blog-post-form" id="add-blog-post-form" method="post" action="/administrator/products" enctype="multipart/form-data">
                             @csrf
                             <div class="form-group">
                                 <label for="name">عنوان محصول</label>
@@ -51,10 +51,8 @@
                             </div>
                             <div class="form-group">
                                 <label for="photo">تصویر</label>
-                                <input type="hidden" name="photo_id[]" id="brand-photo">
-                                <div class="dropzone" id="dropzone"></div>
+                                <input type="file" name="photo_id" id="product-photo">
                             </div>
-
 
                             <div class="form-group">
                                 <label for="name">دسته بندی </label>
@@ -91,7 +89,6 @@
 
         </div>
     </section>
-    <script type="text/javascript" src="{{asset('/admin/dist/js/dropzone.js')}}"></script>
     <script src="//cdn.ckeditor.com/4.14.1/standard/ckeditor.js"></script>
 <script type="text/javascript">
     $(document).ready(function () {
@@ -99,5 +96,19 @@
     });
 </script>
 
+{{--    <script type="text/javascript">--}}
 
+{{--        Dropzone.autoDiscover = false;--}}
+
+{{--        $(document).ready(function () {--}}
+{{--            $("#id_dropzone").dropzone({--}}
+{{--                maxFiles: 2000,--}}
+{{--                url: "/ajax_file_upload_handler/",--}}
+{{--                success: function (file, response) {--}}
+{{--                    console.log(response);--}}
+{{--                }--}}
+{{--            });--}}
+{{--        })--}}
+
+{{--    </script>--}}
 @endsection
