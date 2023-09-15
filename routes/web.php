@@ -29,3 +29,5 @@ Route::prefix('administrator')->group(function () {
     Route::resource('products' , \App\Http\Controllers\Backend\ProductController::class);
 
 });
+
+Route::resource('/' , \App\Http\Controllers\Frontend\HomeController::class);
