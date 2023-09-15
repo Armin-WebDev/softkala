@@ -7,9 +7,9 @@
                 <p>{{ session('add_product') }}</p>
             </div>
         @endif
-        @if(Session::has('update_category'))
+        @if(Session::has('update_product'))
                 <div class="alert alert-success">
-                    <p>{{ session('update_category') }}</p>
+                    <p>{{ session('update_product') }}</p>
                 </div>
         @endif
             @if(Session::has('error_category'))
