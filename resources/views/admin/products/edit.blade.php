@@ -29,6 +29,7 @@
                     <div class="col-md-6 col-md-offset-3">
                         <form name="add-blog-post-form" id="add-blog-post-form" method="post" action="/administrator/products" enctype="multipart/form-data">
                             @csrf
+                            <input type="hidden" name="_method" value="PATCH">
                             <div class="form-group">
                                 <label for="name">عنوان محصول</label>
                                 <input type="text" id="title" name="title" class="form-control" value="{{$product->title}}" placeholder="عنوان محصول را وارد کنید..." required="">
@@ -58,10 +59,10 @@
                                 <label for="name">دسته بندی </label>
                                 <select type="text" id="categories" name="categories[]" class="form-control" multiple>
                                     @foreach($categories as $category)
-                                        <option value="{{ $category->id }}">{{ $category->name }}</option>
+                                        <option value="{{ $category->id }}" @if(in_array($category->id,$product->categories->pluck('id')->toArray())) selected @endif>{{ $category->name }}</option>
                                         @if(count($category->childrenRecursive) > 0)
                                             @foreach($category->childrenRecursive as $sub_category)
-                                                <option value="{{ $sub_category->id }}">-------{{ $sub_category->name }}</option>
+                                                <option value="{{ $sub_category->id }}" @if(in_array($sub_category->id,$product->categories->pluck('id')->toArray())) selected @endif>-------{{ $sub_category->name }}</option>
                                             @endforeach
                                         @endif
                                     @endforeach

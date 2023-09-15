@@ -113,7 +113,7 @@ class ProductController extends Controller
     {
         $categories = Category::with('childrenRecursive')->where('parent_id',null)->get();
 
-        $product = Product::findOrFail($id);
+        $product = Product::with(['categories' , 'photos'])->whereId($id)->first();
 
         return view('admin.products.edit', compact(['product' , 'categories']));
     }
