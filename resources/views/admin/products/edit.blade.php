@@ -27,7 +27,7 @@
             <div class="card-body p-0" style="display: block;">
                 <div class="row">
                     <div class="col-md-6 col-md-offset-3">
-                        <form name="add-blog-post-form" id="add-blog-post-form" method="post" action="/administrator/products" enctype="multipart/form-data">
+                        <form name="add-blog-post-form" id="add-blog-post-form" method="post" action="/administrator/products/{{$product->id}}" enctype="multipart/form-data">
                             @csrf
                             <input type="hidden" name="_method" value="PATCH">
                             <div class="form-group">
@@ -53,6 +53,13 @@
                             <div class="form-group">
                                 <label for="photo">تصویر</label>
                                 <input type="file" name="photo_id" id="product-photo">
+                                <div class="row">
+                                    @foreach($product->photos as $photo)
+                                    <div class="col-sm-3">
+                                        <img src="{{$photo->path}}" alt="">
+                                    </div>
+                                    @endforeach
+                                </div>
                             </div>
 
                             <div class="form-group">

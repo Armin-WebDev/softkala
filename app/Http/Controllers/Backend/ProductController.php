@@ -127,7 +127,33 @@ class ProductController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $product = Product::findOrFail($id);
+        $product->title = $request->title;
+        $product->sku = $this->generateSKU();
+        $product->slug = $this->makeSlug($request->input('slug'));
+        $product->status = $request->status;
+        $product->price = $request->price;
+        $product->discount_price = $request->discount_price;
+        $product->description = $request->description;
+        $product->user_id = 2;
+
+        $product->save();
+        $product->categories()->sync($request->categories);
+
+        if ($file = $request->file('photo_id')){
+            $photo = new Photo();
+            $name = time() . $file->getClientOriginalName();
+            $photo->path = $name;
+            $photo->original_name = $file->getClientOriginalName();
+            $photo->user_id = 2;
+            $photo->save();
+            $product->photos()->sync($photo);
+        }
+
+//      $photos = explode(',' , $request->input('photo_id')[0]);
+
+        session()->flash('update_product' , 'محصول با موفقیت ویرایش شد.');
+        return redirect('/administrator/products/');
     }
 
     /**
