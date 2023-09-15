@@ -17,9 +17,9 @@
                     <p>{{ session('error_category') }}</p>
                 </div>
             @endif
-            @if(Session::has('delete_category'))
+            @if(Session::has('delete_product'))
                 <div class="alert alert-danger">
-                    <p>{{ session('delete_category') }}</p>
+                    <p>{{ session('delete_product') }}</p>
                 </div>
             @endif
     </section>
@@ -64,7 +64,7 @@
                                 <td class="text-center">
                                     <a class="btn btn-warning" href="{{ route('products.edit' , $product->id) }}">ویرایش</a>
                                     <div style="display: inline-block">
-                                        <form method="post" action="/administrator/categories/{{$product->id}}">
+                                        <form method="post" action="/administrator/products/{{$product->id}}">
                                             @csrf
                                             <input type="hidden" name="_method" value="DELETE">
                                             <button type="submit" class="btn btn-danger">حذف</button>

@@ -164,6 +164,10 @@ class ProductController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $product = Product::findOrFail($id);
+        $product->delete();
+
+        session()->flash('delete_product' , 'محصول پاک شد');
+        return redirect('/administrator/products');
     }
 }
