@@ -13,9 +13,9 @@
     <link rel="dns-prefetch" href="//s.w.org" />
     <link rel="alternate" type="application/rss+xml" title="دمو فروشگاه سخت افزار سافت کالا &raquo; خوراک" href="http://softkala.s3.3sz.ir/feed/" />
     <link rel="alternate" type="application/rss+xml" title="دمو فروشگاه سخت افزار سافت کالا &raquo; خوراک دیدگاه‌ها" href="http://softkala.s3.3sz.ir/comments/feed/" />
-    <link rel="stylesheet" id="wp-block-library-rtl-css" href="http://softkala.s3.3sz.ir/wp-includes/css/dist/block-library/style-rtl.min.css?ver=5.9.7" type="text/css" media="all" />
-    <link rel="stylesheet" id="wc-blocks-vendors-style-css" href="http://softkala.s3.3sz.ir/wp-content/plugins/woocommerce/packages/woocommerce-blocks/build/wc-blocks-vendors-style.css?ver=7.4.3" type="text/css" media="all" />
-    <link rel="stylesheet" id="wc-blocks-style-rtl-css" href="http://softkala.s3.3sz.ir/wp-content/plugins/woocommerce/packages/woocommerce-blocks/build/wc-blocks-style-rtl.css?ver=7.4.3" type="text/css" media="all" />
+    <link rel="stylesheet" id="wp-block-library-rtl-css" href="{{ asset('frontend/css/style-rtl.min.css') }}" type="text/css" media="all" />
+    <link rel="stylesheet" id="wc-blocks-vendors-style-css" href="{{ asset('frontend/css/wc-blocks-vendors-style.css') }}" type="text/css" media="all" />
+    <link rel="stylesheet" id="wc-blocks-style-rtl-css" href="{{ asset('frontend/css/wc-blocks-style-rtl.css') }}" type="text/css" media="all" />
     <style id="global-styles-inline-css" type="text/css">
         body {
             --wp--preset--color--black: #000000;
@@ -218,24 +218,24 @@
             visibility: visible;
         }
     </style>
-    <link rel="stylesheet" id="elementor-icons-css" href="http://softkala.s3.3sz.ir/wp-content/plugins/elementor/assets/lib/eicons/css/elementor-icons.min.css?ver=5.15.0" type="text/css" media="all" />
-    <link rel="stylesheet" id="elementor-frontend-legacy-css" href="http://softkala.s3.3sz.ir/wp-content/plugins/elementor/assets/css/frontend-legacy-rtl.min.css?ver=3.6.5" type="text/css" media="all" />
-    <link rel="stylesheet" id="elementor-frontend-css" href="http://softkala.s3.3sz.ir/wp-content/plugins/elementor/assets/css/frontend-rtl.min.css?ver=3.6.5" type="text/css" media="all" />
-    <link rel="stylesheet" id="elementor-post-269-css" href="http://softkala.s3.3sz.ir/wp-content/uploads/elementor/css/post-269.css?ver=1652265489" type="text/css" media="all" />
-    <link rel="stylesheet" id="elementor-post-13-css" href="http://softkala.s3.3sz.ir/wp-content/uploads/elementor/css/post-13.css?ver=1652267395" type="text/css" media="all" />
-    <link rel="stylesheet" id="e-animations-css" href="http://softkala.s3.3sz.ir/wp-content/plugins/elementor/assets/lib/animations/animations.min.css?ver=3.6.5" type="text/css" media="all" />
-    <link rel="stylesheet" id="elementor-icons-shared-0-css" href="http://softkala.s3.3sz.ir/wp-content/plugins/elementor/assets/lib/font-awesome/css/fontawesome.min.css?ver=5.15.3" type="text/css" media="all" />
-    <link rel="stylesheet" id="elementor-icons-fa-solid-css" href="http://softkala.s3.3sz.ir/wp-content/plugins/elementor/assets/lib/font-awesome/css/solid.min.css?ver=5.15.3" type="text/css" media="all" />
-    <link rel="stylesheet" id="elementor-icons-fa-brands-css" href="http://softkala.s3.3sz.ir/wp-content/plugins/elementor/assets/lib/font-awesome/css/brands.min.css?ver=5.15.3" type="text/css" media="all" />
-    <link rel="stylesheet" id="elementor-icons-fa-regular-css" href="http://softkala.s3.3sz.ir/wp-content/plugins/elementor/assets/lib/font-awesome/css/regular.min.css?ver=5.15.3" type="text/css" media="all" />
-    <link rel="stylesheet" id="bootstrap-css" href="http://softkala.s3.3sz.ir/wp-content/themes/woodmart/css/bootstrap.min.css?ver=6.4.2" type="text/css" media="all" />
-    <link rel="stylesheet" id="woodmart-style-css" href="http://softkala.s3.3sz.ir/wp-content/themes/woodmart/css/style-rtl-elementor.min.css?ver=6.4.2" type="text/css" media="all" />
-    <link rel="stylesheet" id="wd-wpcf7-css" href="http://softkala.s3.3sz.ir/wp-content/themes/woodmart/css/parts/int-wpcf7-rtl.min.css?ver=6.4.2" type="text/css" media="all" />
-    <link rel="stylesheet" id="wd-mc4wp-deprecated-css" href="http://softkala.s3.3sz.ir/wp-content/themes/woodmart/css/parts/int-mc4wp-deprecated.min.css?ver=6.4.2" type="text/css" media="all" />
-    <link rel="stylesheet" id="wd-mc4wp-css" href="http://softkala.s3.3sz.ir/wp-content/themes/woodmart/css/parts/int-mc4wp.min.css?ver=6.4.2" type="text/css" media="all" />
-    <link rel="stylesheet" id="wd-revolution-slider-css" href="http://softkala.s3.3sz.ir/wp-content/themes/woodmart/css/parts/int-rev-slider.min.css?ver=6.4.2" type="text/css" media="all" />
-    <link rel="stylesheet" id="wd-base-deprecated-css" href="http://softkala.s3.3sz.ir/wp-content/themes/woodmart/css/parts/base-deprecated.min.css?ver=6.4.2" type="text/css" media="all" />
-    <link rel="stylesheet" id="xts-style-header_246188-css" href="http://softkala.s3.3sz.ir/wp-content/uploads/2023/07/xts-header_246188-1690710040.css?ver=6.4.2" type="text/css" media="all" />
+    <link rel="stylesheet" id="elementor-icons-css" href="{{ asset('frontend/css/elementor-icons-min.css') }}" type="text/css" media="all" />
+    <link rel="stylesheet" id="elementor-frontend-legacy-css" href="{{ asset('frontend/css/frontend-legacy-rtl.min.css') }}" type="text/css" media="all" />
+    <link rel="stylesheet" id="elementor-frontend-css" href="{{ asset('frontend/css/frontend-rtl.min.css') }}" type="text/css" media="all" />
+    <link rel="stylesheet" id="elementor-post-269-css" href="{{ asset('frontend/css/post-269.css') }}" type="text/css" media="all" />
+    <link rel="stylesheet" id="elementor-post-13-css" href="{{ asset('frontend/css/post-13.css') }}" type="text/css" media="all" />
+    <link rel="stylesheet" id="e-animations-css" href="{{ asset('frontend/css/animations.min.css') }}" type="text/css" media="all" />
+    <link rel="stylesheet" id="elementor-icons-shared-0-css" href="{{ asset('frontend/css/fontawesome.min.css') }}" type="text/css" media="all" />
+    <link rel="stylesheet" id="elementor-icons-fa-solid-css" href="{{ asset('frontend/css/solid.min.css') }}" type="text/css" media="all" />
+    <link rel="stylesheet" id="elementor-icons-fa-brands-css" href="{{ asset('frontend/css/brands.min.css') }}" type="text/css" media="all" />
+    <link rel="stylesheet" id="elementor-icons-fa-regular-css" href="{{ asset('frontend/css/regular.min.css') }}" type="text/css" media="all" />
+    <link rel="stylesheet" id="bootstrap-css" href="{{ asset('frontend/css/bootstrap.min.css') }}" type="text/css" media="all" />
+    <link rel="stylesheet" id="woodmart-style-css" href="{{ asset('frontend/css/style-rtl-elementor.min.css') }}" type="text/css" media="all" />
+    <link rel="stylesheet" id="wd-wpcf7-css" href="{{ asset('frontend/css/int-wpcf7-rtl.min.css') }}" type="text/css" media="all" />
+    <link rel="stylesheet" id="wd-mc4wp-deprecated-css" href="{{ asset('frontend/css/int-mc4wp-deprecated.min.css') }}" type="text/css" media="all" />
+    <link rel="stylesheet" id="wd-mc4wp-css" href="{{ asset('frontend/css/int-mc4wp.min.css') }}" type="text/css" media="all" />
+    <link rel="stylesheet" id="wd-revolution-slider-css" href="{{ asset('frontend/css/int-rev-slider.min.css') }}" type="text/css" media="all" />
+    <link rel="stylesheet" id="wd-base-deprecated-css" href="{{ asset('frontend/css/base-deprecated.min.css') }}" type="text/css" media="all" />
+    <link rel="stylesheet" id="xts-style-header_246188-css" href="{{ asset('frontend/css/xts-header_246188-1690710040.css') }}" type="text/css" media="all" />
     <link
         rel="stylesheet"
         id="google-fonts-1-css"
@@ -243,10 +243,10 @@
         type="text/css"
         media="all"
     />
-    <script type="text/javascript" src="http://softkala.s3.3sz.ir/wp-includes/js/jquery/jquery.min.js?ver=3.6.0" id="jquery-core-js"></script>
-    <script type="text/javascript" src="http://softkala.s3.3sz.ir/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.3.2" id="jquery-migrate-js"></script>
-    <script type="text/javascript" src="http://softkala.s3.3sz.ir/wp-content/plugins/special-offer-woodmart/inc/../assets/js/plugin.js?ver=5.9.7" id="offer-plugin-zhaket-js"></script>
-    <script type="text/javascript" src="http://softkala.s3.3sz.ir/wp-content/themes/woodmart/js/libs/device.min.js?ver=6.4.2" id="wd-device-library-js"></script>
+    <script type="text/javascript" src="{{ asset('frontend/css/jquery.min.js') }}" id="jquery-core-js"></script>
+    <script type="text/javascript" src="{{ asset('frontend/css/jquery-migrate.min.js') }}" id="jquery-migrate-js"></script>
+    <script type="text/javascript" src="{{ asset('frontend/css/plugin.js') }}" id="offer-plugin-zhaket-js"></script>
+    <script type="text/javascript" src="{{ asset('frontend/css/device.min.js') }}" id="wd-device-library-js"></script>
     <link rel="https://api.w.org/" href="http://softkala.s3.3sz.ir/wp-json/" />
     <link rel="alternate" type="application/json" href="http://softkala.s3.3sz.ir/wp-json/wp/v2/pages/13" />
     <link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://softkala.s3.3sz.ir/xmlrpc.php?rsd" />
