@@ -6116,19 +6116,19 @@
     };
     /* ]]> */
 </script>
-<script type="text/javascript" src="http://softkala.s3.3sz.ir/wp-content/themes/woodmart/js/scripts/wc/updateCartFragmentsFix.js?ver=6.4.2" id="wd-update-cart-fragments-fix-js"></script>
-<script type="text/javascript" src="http://softkala.s3.3sz.ir/wp-includes/js/dist/vendor/regenerator-runtime.min.js?ver=0.13.9" id="regenerator-runtime-js"></script>
-<script type="text/javascript" src="http://softkala.s3.3sz.ir/wp-includes/js/dist/vendor/wp-polyfill.min.js?ver=3.15.0" id="wp-polyfill-js"></script>
+<script type="text/javascript" src="{{ asset('frontend/js/updateCartFragmentsFix.js') }}" id="wd-update-cart-fragments-fix-js"></script>
+<script type="text/javascript" src="{{ asset('frontend/js/regenerator-runtime.min.js') }}" id="regenerator-runtime-js"></script>
+<script type="text/javascript" src="{{ asset('frontend/js/wp-polyfill.min.js') }}" id="wp-polyfill-js"></script>
 <script type="text/javascript" id="contact-form-7-js-extra">
     /* <![CDATA[ */
     var wpcf7 = { api: { root: "http:\/\/softkala.s3.3sz.ir\/wp-json\/", namespace: "contact-form-7\/v1" } };
     /* ]]> */
 </script>
-<script type="text/javascript" src="http://softkala.s3.3sz.ir/wp-content/plugins/contact-form-7/includes/js/index.js?ver=5.5.6" id="contact-form-7-js"></script>
-<script type="text/javascript" src="http://softkala.s3.3sz.ir/wp-content/plugins/revslider/public/assets/js/rbtools.min.js?ver=6.5.13" defer async id="tp-tools-js"></script>
-<script type="text/javascript" src="http://softkala.s3.3sz.ir/wp-content/plugins/revslider/public/assets/js/rs6.min.js?ver=6.5.13" defer async id="revmin-js"></script>
-<script type="text/javascript" src="http://softkala.s3.3sz.ir/wp-content/plugins/elementor/assets/lib/swiper/swiper.min.js?ver=5.3.6" id="swiper-js"></script>
-<script type="text/javascript" src="http://softkala.s3.3sz.ir/wp-content/plugins/woocommerce/assets/js/jquery-blockui/jquery.blockUI.min.js?ver=2.7.0-wc.6.5.0" id="jquery-blockui-js"></script>
+<script type="text/javascript" src="{{ asset('frontend/js/index.js') }}" id="contact-form-7-js"></script>
+<script type="text/javascript" src="{{ asset('frontend/js/rbtools.min.js') }}" defer async id="tp-tools-js"></script>
+<script type="text/javascript" src="{{ asset('frontend/js/rs6.min.js') }}" defer async id="revmin-js"></script>
+<script type="text/javascript" src="{{ asset('frontend/js/swiper.min.js') }}" id="swiper-js"></script>
+<script type="text/javascript" src="{{ asset('frontend/js/jquery.blockUI.min.js') }}" id="jquery-blockui-js"></script>
 <script type="text/javascript" id="wc-add-to-cart-js-extra">
     /* <![CDATA[ */
     var wc_add_to_cart_params = {
@@ -6141,14 +6141,14 @@
     };
     /* ]]> */
 </script>
-<script type="text/javascript" src="http://softkala.s3.3sz.ir/wp-content/plugins/woocommerce/assets/js/frontend/add-to-cart.min.js?ver=6.5.0" id="wc-add-to-cart-js"></script>
-<script type="text/javascript" src="http://softkala.s3.3sz.ir/wp-content/plugins/woocommerce/assets/js/js-cookie/js.cookie.min.js?ver=2.1.4-wc.6.5.0" id="js-cookie-js"></script>
+<script type="text/javascript" src="{{ asset('frontend/js/add-to-cart.min.js') }}" id="wc-add-to-cart-js"></script>
+<script type="text/javascript" src="{{ asset('frontend/js/js.cookie.min.js') }}" id="js-cookie-js"></script>
 <script type="text/javascript" id="woocommerce-js-extra">
     /* <![CDATA[ */
     var woocommerce_params = { ajax_url: "\/wp-admin\/admin-ajax.php", wc_ajax_url: "\/?wc-ajax=%%endpoint%%" };
     /* ]]> */
 </script>
-<script type="text/javascript" src="http://softkala.s3.3sz.ir/wp-content/plugins/woocommerce/assets/js/frontend/woocommerce.min.js?ver=6.5.0" id="woocommerce-js"></script>
+<script type="text/javascript" src="{{ asset('frontend/js/woocommerce.min.js') }}" id="woocommerce-js"></script>
 <script type="text/javascript" id="wc-cart-fragments-js-extra">
     /* <![CDATA[ */
     var wc_cart_fragments_params = {
@@ -6160,7 +6160,7 @@
     };
     /* ]]> */
 </script>
-<script type="text/javascript" src="http://softkala.s3.3sz.ir/wp-content/plugins/woocommerce/assets/js/frontend/cart-fragments.min.js?ver=6.5.0" id="wc-cart-fragments-js"></script>
+<script type="text/javascript" src="{{ asset('frontend/js/cart-fragments.min.js') }}" id="wc-cart-fragments-js"></script>
 <script type="text/javascript" src="http://softkala.s3.3sz.ir/wp-content/plugins/elementor/assets/lib/waypoints/waypoints.min.js?ver=4.0.2" id="elementor-waypoints-js"></script>
 <script type="text/javascript" src="http://softkala.s3.3sz.ir/wp-includes/js/imagesloaded.min.js?ver=4.1.4" id="imagesloaded-js"></script>
 <script type="text/javascript" id="woodmart-theme-js-extra">
